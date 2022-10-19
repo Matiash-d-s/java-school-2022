@@ -9,35 +9,36 @@ public class Task1 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         Point a = new Point();
-        System.out.print("Введите координату х вершины №1:");
+        System.out.print("Р’РІРµРґРёС‚Рµ РєРѕРѕСЂРґРёРЅР°С‚Сѓ С… РІРµСЂС€РёРЅС‹ в„–1:");
         a.x = in.nextDouble();
-        System.out.print("Введите координату y вершины №1:");
+        System.out.print("Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г®Г°Г¤ГЁГ­Г ГІГі y ГўГҐГ°ГёГЁГ­Г» В№1:");
         a.y = in.nextDouble();
 
         Point b = new Point();
-        System.out.print("Введите координату х вершины №2:");
+        System.out.print("Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г®Г°Г¤ГЁГ­Г ГІГі Гµ ГўГҐГ°ГёГЁГ­Г» В№2:");
         b.x = in.nextDouble();
-        System.out.print("Введите координату y вершины №2:");
+        System.out.print("Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г®Г°Г¤ГЁГ­Г ГІГі y ГўГҐГ°ГёГЁГ­Г» В№2:");
         b.y = in.nextDouble();
 
         Point c = new Point();
-        System.out.print("Введите координату х вершины №3:");
+        System.out.print("Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г®Г°Г¤ГЁГ­Г ГІГі Гµ ГўГҐГ°ГёГЁГ­Г» В№3:");
         c.x = in.nextDouble();
-        System.out.print("Введите координату y вершины №3:");
+        System.out.print("Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г®Г°Г¤ГЁГ­Г ГІГі y ГўГҐГ°ГёГЁГ­Г» В№3:");
         c.y = in.nextDouble();
         double ab = Math.sqrt((a.x - b.x)*(a.x - b.x) + (a.y - b.y)*(a.y - b.y));
         double ac = Math.sqrt((a.x - c.x)*(a.x - c.x) + (a.y - c.y)*(a.y - c.y));
         double bc = Math.sqrt((b.x - c.x)*(b.x - c.x) + (b.y - c.y)*(b.y - c.y));
         if (ab + ac <= bc || ab + bc <= ac || ac + bc <= ab)
-            System.out.println("Треугольник не существует");
+            System.out.println("Г’Г°ГҐГіГЈГ®Г«ГјГ­ГЁГЄ Г­ГҐ Г±ГіГ№ГҐГ±ГІГўГіГҐГІ");
         else
         {
             double p = (ab + ac + bc) / 2.0;
             double square = Math.sqrt(p * (p - ab) * (p - ac) * (p - bc));
-            System.out.println("Площадь первым способом: " + String.format("%.1f",square));
+            System.out.println("ГЏГ«Г®Г№Г Г¤Гј ГЇГҐГ°ГўГ»Г¬ Г±ГЇГ®Г±Г®ГЎГ®Г¬: " + String.format("%.1f",square));
+            double square2 = 0.5 * Math.abs((b.x-a.x)*(c.y-a.y)-(c.x-a.x)*(b.y-a.y));
+            System.out.println("ГЏГ«Г®Г№Г Г¤Гј ГўГІГ®Г°Г»Г¬ Г±ГЇГ®Г±Г®ГЎГ®Г¬: " + square2);
         }
-        double square2 = 0.5 * Math.abs((b.x-a.x)*(c.y-a.y)-(c.x-a.x)*(b.y-a.y));
-        System.out.println("Площадь вторым способом: " + square2);
+        
     }
 
 }
